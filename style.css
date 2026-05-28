@@ -1,0 +1,112 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ccc;
+  overflow: hidden;
+}
+
+.game-conteiner {
+  width: 335px;
+  height: 335px;
+  border: 1px solid #ccc;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+
+.grid-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  width: 80px;
+  height: 80px;
+  background-color: #f4f4f4;
+}
+
+.score-container {
+  width: 335px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.restart-game {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-cell[data-value] {
+  transition: background-color 0.3s ease;
+}
+
+.new-tile {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.grid-cell[data-value="2"] {
+  background-color: #eee4da;
+}
+.grid-cell[data-value="4"] {
+  background-color: #ede0c8;
+}
+.grid-cell[data-value="8"] {
+  background-color: #f2b179;
+}
+.grid-cell[data-value="16"] {
+  background-color: #f59563;
+}
+.grid-cell[data-value="32"] {
+  background-color: #f67c5f;
+}
+.grid-cell[data-value="64"] {
+  background-color: #f65e3b;
+}
+.grid-cell[data-value="128"] {
+  background-color: #edd371;
+}
+.grid-cell[data-value="256"] {
+  background-color: #edcf61;
+}
+.grid-cell[data-value="512"] {
+  background-color: #edcc48;
+}
+.grid-cell[data-value="1024"] {
+  background-color: #edc840;
+}
+.grid-cell[data-value="2048"] {
+  background-color: #edc53f;
+}
